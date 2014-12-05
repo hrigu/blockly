@@ -6,11 +6,33 @@ goog.require('Blockly.Blocks');
 
 
 
+Blockly.Blocks['planik_and_or'] = {
+    init: function() {
+        this.setHelpUrl('http://www.example.com/');
+        this.appendValueInput("and_or")
+            .setCheck("planik_tag")
+            .appendField(new Blockly.FieldDropdown([["and", "AND"], ["or", "OR"]]), "and_or");
+        this.setOutput(true, "planik_and_or");
+        this.setTooltip('');
+    }
+};
+Blockly.Blocks['planik_tag'] = {
+    init: function() {
+        this.setHelpUrl('http://www.example.com/');
+        this.setColour(345);
+        this.appendValueInput("and_or")
+            .setCheck("planik_and_or");
+        this.setOutput(true, "planik_tag");
+        this.setTooltip('');
+    }
+};
+
+
 /**
  * https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#8q7vup
  * Alternative: Tagesindex in dropdown: https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#a6i6yd
  */
-Blockly.Blocks['planik_tag'] = {
+Blockly.Blocks['old_planik_tag'] = {
     init: function() {
         this.setHelpUrl('http://www.example.com/');
         this.setColour(315);
